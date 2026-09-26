@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-ZA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-visual" />
+    <meta name="theme-color" content="#FFF5EC" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Baby Tracker" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="./icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" />
+    <title>Baby Tracker</title>
+    <script>
+      // Colours before the first paint, so opening at 3am is not a flash of white.
+      // Mirrors ThemeProvider: the saved theme; light unless night mode was chosen.
+      try {
+        var t = localStorage.getItem('bt.theme') || 'apricot'
+        var m = localStorage.getItem('bt.nightMode') || 'day'
+        var h = new Date().getHours()
+        var night = m === 'auto' ? h >= 20 || h < 6 : m === 'night'
+        document.documentElement.dataset.theme = t
+        document.documentElement.dataset.mode = night ? 'night' : 'day'
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-BWM6xjrC.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-Dq8QfP7k.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-BVtiCB_e.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
